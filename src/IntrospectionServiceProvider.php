@@ -24,7 +24,7 @@ class IntrospectionServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/introspection.php' => config_path('introspection.php'),
-        ]);
+        ], 'introspection-client-config');
     }
 
     /**
