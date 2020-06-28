@@ -40,18 +40,5 @@ return [
     'client_id' => env('INTROSPECTION_CLIENT_ID'),
 
     'client_secret' => env('INTROSPECTION_CLIENT_SECRET'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Performance
-    |--------------------------------------------------------------------------
-    |
-    | To reduce network traffic and load on your authorization server, this
-    | package will cache the introspection response for a configurable amount
-    | of time. Use the options below to change this behavior.
-    |
-    */
-
-    // Time in seconds, 15 minutes by default - Set to 0 to disable caching
-    'introspection_cache_ttl' => 900,
+    
 ];

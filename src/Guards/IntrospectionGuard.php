@@ -87,14 +87,11 @@ class IntrospectionGuard
      */
     protected function introspect(Request $request)
     {
-        Log::debug('IntrospectionGuard\introspect(): Checking cache for introspection response for the requests bearer token...');
-        $response = Cache::remember('introspection-response-'.$request->bearerToken(), config('introspection.introspection_cache_ttl'), function () use ($request) {
-            Log::debug('IntrospectionGuard\introspect(): Not cached, making request to introspection endpoint...');
-            return Http::asForm()->withToken($this->getAccessToken())->post(config('introspection.introspect_url'), [
-                'token_type_hint' => 'access_token',
-                'token' => $request->bearerToken()
-            ]);
-        });
+        Log::debug('IntrospectionGuard\introspect(): Not cached, making request to introspection endpoint...');
+        $response = Http::asForm()->withToken($this->getAccessToken())->post(config('introspection.introspect_url'), [
+            'token_type_hint' => 'access_token',
+            'token' => $request->bearerToken()
+        ]);
 
         if ($response->failed()) {
             Log::debug('IntrospectionGuard\introspect(): Request failed with status code: '.$response->status());

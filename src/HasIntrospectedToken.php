@@ -2,8 +2,6 @@
 
 namespace DataHiveDevelopment\PassportIntrospectionClient;
 
-use Laravel\Passport\Token;
-
 trait HasIntrospectedToken
 {
     /**
