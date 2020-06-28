@@ -1,0 +1,33 @@
+{
+    "name": "datahivedevelopment/passport-introspection-client",
+    "description": "Provides a Laravel resource application the capabilities of using an introspection server for API token authentication.",
+    "require": {
+        "php": "^7.2",
+        "laravel/passport": "^9.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dustin Schreiber",
+            "email": "dustinschreiber@datahivedev.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/datahivedevelopment/passport-introspection-client/issues",
+        "source": "https://github.com/datahivedevelopment/passport-introspection-client"
+    },
+    "autoload": {
+        "psr-4": {
+            "DataHiveDevelopment\\PassportIntrospectionClient\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DataHiveDevelopment\\PassportIntrospectionClient\\IntrospectionServiceProvider"
+            ]
+        }
+    }
+}
